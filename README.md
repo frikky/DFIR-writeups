@@ -6,10 +6,10 @@ Most writeups here will contain images from:
 http://www.dfir.training/index.php/lists/test-images-and-challenges
 
 ## Goal
-Finish at least one image a week from the DFIR training site.
+Finish at least one image a week from the DFIR training site. Will hopefully start soon.
 
 ## Tools
-Filling this up as I get used to new tools. It will mostly contain data from the dfir.training tools section.
+Filling this up as I get used to new tools. It will mostly contain data from the http://dfir.training tools section.
 
 ## Readinglist
 * (In progress) The art of Memory forensics 
