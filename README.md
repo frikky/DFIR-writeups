@@ -20,3 +20,6 @@ Filling this up as I get used to new tools. It will mostly contain data from the
 http://www.dfir.training
 
 https://www.reddit.com/r/computerforensics
+
+# Other resources
+SANS Windows internals: https://www.sans.org/reading-room/whitepapers/forensics/creating-baseline-process-activity-memory-forensics-35387
