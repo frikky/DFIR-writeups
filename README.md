@@ -10,15 +10,15 @@ Finish at least one image a week from the DFIR training site. Will hopefully sta
 
 ## Tools
 Filling this up as I get used to new tools. It will mostly contain data from the http://dfir.training tools section.
+* Volatility
 
 ## Readinglist
 * (In progress) The art of Memory forensics 
 * Computer Forensics InfoSec Pro Guide
 * (More in FAQ of /r/computerforensics)
 
-## Resources
+## Training resources
 http://www.dfir.training
-
 https://www.reddit.com/r/computerforensics
 
 # Other resources

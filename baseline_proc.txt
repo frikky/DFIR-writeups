@@ -1,0 +1,37 @@
+# Document describing normal processes
+# - after means inherritence (parent)
+
+Normal processes on startup:
+smss.exe 	- System
+csrss.exe 	- smss.exe
+wininit.exe - smss.exe 
+services.exe- wininit.exe
+lsass.exe	- wininit.exe
+lsm.exe		- wininit.exe
+svchost.exe - services.exe
+
+Not logged in user:
+csrss.exe
+winlogon.exe
+LogonUI.exe - Winlogon.exe 
+
+Console:
+csrss.exe 
+winlogon.exe
+taskhost.exe 	- services.exe
+TPAutoConnext.exe  - TPAutoConnSvc.exe
+conhost.exe		- crsrr.exe 
+dwm.exe			- svchost.exe
+explorer.exe 
+vmtoolsd.exe 	- explorer.exe
+
+Remote:
+csrss.exe 
+winlogon.exe
+taskhost.exe 	- services.exe
+TPAutoConnext.exe  - TPAutoConnSvc.exe
+conhost.exe 	- crsrr.exe
+dwm.exe			- svchost.exe
+rdpclip.exe 	- services.exe
+explorer.exe 	
+vmtoolsd.exe	- explorer.exe
