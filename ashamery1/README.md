@@ -3,9 +3,10 @@ http://www.ashemery.com/dfir.html
 Me learning to better deal with the data output of volatility \o/
 
 Commands to start off the investigation:
-$ volatility -f /tmp/memdump.mem imageinfo
+$ volatility -f /tmp/memdump.mem imageinfo<br>
 $ export VOLATILITY_LOCATION=file:///tmp/memdump.mem
 $ export VOLATILITY_PROFILE=VistaSP1x86
+$ volatility timeliner --output-file timeline.csv
 
 1. Identify Rogue processes - Process initially not part of ../baseline\_proc.txt
 Commands used: 
@@ -17,7 +18,6 @@ Maxname seems to be 13 in length
 Virtualbox: 
 VBoxService.exe - 836
 VBoxTray.exe	- 1816
-FTK Imager.exe  - 2120  - 816
 
 Other (significant?):
 explorer.exe 	- 816
@@ -28,6 +28,8 @@ mysqld.exe 		- 2804  - 2768 (child of xampp)
 httpd.exe 		- 2796 	- 2768
 FileZillaServer - 2856	- 2768
 httpd.exe 		- 2880 	- 2796 (child of httpd)
+
+^Might be this one
 
 The above seem to not be windows native processes.
 
@@ -61,12 +63,31 @@ Shows 130 Kernel Modules.
 ### The Above hasn't been analyzed yet.
 3. Review Network Artifacts
 $ volatility netscan | cut -c 12-18,21-40,51-63,88-92,94-120 | uniq -w 20
+Host address is i192.168.56.101
+
+Rogue services seen: 
+httpd:443
+FileZillaServer:21
+mysqld:3306
+
+Established:
+svchost - PID 1108 -> 192.168.56.1:5357
 
 4. Look for Evidence of Code Injection
 5. Check for Signs of Rootkit
 6. Dump Suspicious Processes and Drivers
 
+# Other
+httpd.exe 		- 2880 	- 2796 (child of httpd)
+$ volatility pstree 
+The above shows that httpd is started from another httpd process. Most likely not how it's supposed to work.
+
+$ volatility impscan -p 2880
+This gives the functions calls in play. Function "IsDebuggerPresent" is used. Same for 2796
+
 # Author questions
+A company’s web server has been breached through their website. Our team arrived just in time to take a forensic image of the running system and its memory for further analysis. The files can be found below: 
+
 1. What type of attacks has been performed on the box?
 2. How many users has the attacker(s) added to the box, and how were they added?
 3. What leftovers (files, tools, info, etc) did the attacker(s) leave behind? (assume our team arrived in time and the attacker(s) couldn’t clean and cover their tracks)
