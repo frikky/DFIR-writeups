@@ -18,8 +18,9 @@ Filling this up as I get used to new tools. It will mostly contain data from the
 * (More in FAQ of /r/computerforensics)
 
 ## Training resources
-http://www.dfir.training
-https://www.reddit.com/r/computerforensics
+* http://www.dfir.training
+* https://www.reddit.com/r/computerforensics
+* https://vimeo.com/oalabs
 
 # Other resources
 SANS Windows internals: https://www.sans.org/reading-room/whitepapers/forensics/creating-baseline-process-activity-memory-forensics-35387
